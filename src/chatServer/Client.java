@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -17,9 +18,10 @@ public class Client {
 	public BufferedWriter bWriter;
 	 public BufferedReader bReader;
 	 public String username;
+	 HashMap<String,String> crendtials = new HashMap<String,String>();
 
 
-	
+
 	public Client(Socket socket ,String username) {
 		try {
 			this.clientSocket = socket;
@@ -32,8 +34,6 @@ public class Client {
 		
 		
 	}
-
-	
 
 	
 	public void sendMessage() throws IOException {
